@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #29275d;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .card {
+            width: 900px;
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 12px;
+        }
+
+        h1 {
+            background-color: #f23c3c;
+            border-radius: 14px;
+            padding: 40px 20px;
+            color: #ffffff;
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .table-container {
+            max-height: 320px;
+            overflow-y: auto;
+            margin-top: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #8b8bb0;
+            padding: 22px 24px 12px;
+            position: sticky;
+            top: 0;
+            background-color: #ffffff;
+            z-index: 2;
+        }
+
+        td {
+            padding: 16px 24px;
+            text-align: left;
+            color: #29275d;
+            font-weight: 600;
+            border-top: 1px solid #eeeef5;
+        }
+
+        .empty {
+            text-align: center;
+            color: #8b8bb0;
+            padding: 30px 0;
+        }
+        
+        .table-container {
+            scrollbar-width: thin;
+            scrollbar-color: #ffb33e #29275d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>Student List</h1>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Course</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for x in student %}
+
+                        <tr>
+                            <td>{{ x.name }}</td>
+                            <td>{{ x.age }}</td>
+                            <td>{{ x.course }}</td>
+                        </tr>
+
+                    {% empty %}
+
+                        <tr>
+                            <td colspan="3" class="empty">
+                                No students found.
+                            </td>
+                        </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
