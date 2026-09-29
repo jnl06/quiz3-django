@@ -10,6 +10,7 @@ def student_list(request):
         {"name": "Rafael Metran", "age": 23, "course": "BSE"},
         {"name": "Neftaly Careg", "age": 24, "course": "BSA"},
         {"name": "Ceejay Petalvero", "age": 25, "course": "BSIT"},
-        {"name": "Carl Chua", "age": 26, "course": "BSA"}
+        {"name": "Carl Chua", "age": 26, "course": "BSA"},
+        {"name": "Geo Dalumpienes", "age": 27, "course": "BSE"}
     ]
     return render(request, "main/home.html", {"student": student})
